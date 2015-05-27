@@ -1,0 +1,23 @@
+<table>
+
+	<tr>
+		<% for i in 0..5 %>
+			<th><%= @category[i].text %></th>
+		<% end %>
+	</tr>
+
+	<% score = 100 %>
+	<% for i in 0..4 %>
+
+		<tr>
+
+			<% for j in 0..5 %>
+				<td id="question<%= @category[j].questions[i].id %>"><%= score.to_s %></td>
+			<% end %>
+
+		</tr>
+
+	<% score += 100 %>
+	<% end %>
+
+</table>
