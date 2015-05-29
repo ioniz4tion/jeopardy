@@ -12,7 +12,7 @@
 		<tr>
 
 			<% for j in 0..5 %>
-				<td id="question<%= @category[j].questions[i].id %>"><%= score.to_s %></td>
+				<td id="question<%= @category[j].questions[i].id %>">$<%= score.to_s %></td>
 			<% end %>
 
 		</tr>
@@ -21,3 +21,19 @@
 	<% end %>
 
 </table>
+
+<span>Pregunta Final</span>
+
+<div id="theSpace">
+	<div>
+		<div id="theX"><span></span></div>
+		<div id="theQuestion"><div>
+			<p></p>
+			<span id="showAnswer">Show Answer</span>
+		</div></div>
+		<div id="theAnswer"><div>
+			<p></p>
+		</div></div>
+	</div>
+</div>
+

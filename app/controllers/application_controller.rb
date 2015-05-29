@@ -5,5 +5,14 @@ class ApplicationController < ActionController::Base
 
   def index
   	@category = Category.all
+  	@result = Question.find_by_id(17)
+  end
+
+  def get_question
+  	result = Question.find_by_id(params[:id])
+  	result = result.to_json
+  	respond_to do |format|
+      format.html { render json: result, status: :ok }
+    end
   end
 end

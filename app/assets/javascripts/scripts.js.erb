@@ -1,0 +1,20 @@
+$(document).ready(function() {
+	var id;
+	var clickedQuestion;
+	$('td').click(function() {
+		id = $(this).attr('id');
+		id = id.replace('question', '');
+		$.ajax({url: "/getquestion", data: {id: id}, dataType: "json",success: function(result){
+        $('#theQuestion p').html(result.question);
+        $('#theAnswer p').html(result.answer);
+    }});
+    $('#theSpace').addClass('open');
+	});
+	$('#showAnswer').click(function() {
+		$('#theQuestion').addClass('open');
+		$('#theAnswer').addClass('open');
+	});
+	$('#theX').click(function() {
+		$('#theSpace').removeClass('open');
+	});
+});
